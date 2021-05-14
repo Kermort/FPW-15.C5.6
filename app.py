@@ -36,7 +36,6 @@ def convert(message: telebot.types.Message):
             raise APIException("Передано неверное количество параметров")
         cur, base, amount = user_message
         total = float(Converter.convert(cur, base, amount))
-        amount = float(amount)
     except APIException as e:
         bot.send_message(message.chat.id, f"Ошибка ввода\n{e}", reply_markup=reply_markup)
     except Exception as e:
